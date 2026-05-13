@@ -11,7 +11,7 @@ from resume_parser.skill_extractor import (
     get_missing_skills,
     extract_skills,
 )
-from resume_parser.ats_scorer import calculate_ats_score
+from resume_parser.ats_scorer_v2 import calculate_ats_score
 from interview_engine.resume_analyzer import (
     analyse_resume,
     get_improvement_suggestions,

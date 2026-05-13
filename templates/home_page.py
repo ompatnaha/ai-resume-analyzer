@@ -5,6 +5,7 @@ Landing / home page — upload resume, enter JD, kick off analysis.
 
 import streamlit as st
 from resume_parser.pdf_extractor import extract_text_from_pdf
+from resume_parser.parser_v2 import parse_resume
 from utils.helpers import clean_text, chunk_text
 from utils.config import is_configured
 from models.vector_store import build_vector_store
@@ -71,6 +72,10 @@ def render_home(config: dict) -> None:
 
             if raw_text:
                 cleaned = clean_text(raw_text)
+                parsed_data = parse_resume(uploaded_file)
+
+                st.subheader("📌 Parsed Resume Information")
+                st.write(parsed_data)
                 chunks  = chunk_text(cleaned)
 
                 st.session_state["resume_text"]     = cleaned
