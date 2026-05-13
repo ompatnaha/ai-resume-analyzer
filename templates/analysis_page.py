@@ -39,7 +39,29 @@ def render_analysis(config: dict) -> None:
 
     resume_text = st.session_state["resume_text"]
     jd_text     = st.session_state.get("job_description", "")
+    if resume_text and jd_text:
 
+        ats_result = calculate_ats_score(
+            resume_text,
+            jd_text
+    )
+
+    st.subheader("📊 ATS Score")
+
+    st.metric(
+        "ATS Match Score",
+        f"{ats_result['ATS Score']}%"
+    )
+
+    st.write("### ✅ Matching Skills")
+    st.write(ats_result["Matching Skills"])
+
+    st.write("### ❌ Missing Skills")
+    st.write(ats_result["Missing Skills"])
+
+    st.write("### 💡 Suggestions")
+    st.write(ats_result["Suggestions"])
+    
     # ── Run analysis button ───────────────────────────────────────────────────
     run_col, _ = st.columns([2, 3])
     with run_col:
