@@ -1,0 +1,315 @@
+/* assets/styles.css
+   ResumeAI Pro — Professional dark-themed UI
+   Font: Sora (display) + DM Sans (body)
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&display=swap');
+
+/* ── Root variables ────────────────────────────────────────────────────────── */
+:root {
+  --primary:       #6C63FF;
+  --primary-light: #8B85FF;
+  --primary-dark:  #4A44CC;
+  --accent:        #00D4AA;
+  --accent2:       #FF6B6B;
+  --bg-dark:       #0F1117;
+  --bg-card:       #1A1D2E;
+  --bg-card2:      #252840;
+  --text-primary:  #E8E9F3;
+  --text-secondary:#A0A3B1;
+  --border:        rgba(108, 99, 255, 0.2);
+  --success:       #2ECC71;
+  --warning:       #F39C12;
+  --danger:        #E74C3C;
+  --radius:        12px;
+  --radius-sm:     8px;
+  --shadow:        0 4px 24px rgba(0,0,0,0.4);
+}
+
+/* ── Global base ────────────────────────────────────────────────────────────── */
+html, body, [class*="css"] {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-primary);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+}
+
+/* ── Sidebar ────────────────────────────────────────────────────────────────── */
+[data-testid="stSidebar"] {
+  background: var(--bg-card) !important;
+  border-right: 1px solid var(--border);
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0 16px;
+}
+
+.brand-icon { font-size: 2rem; }
+
+.brand-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.brand-sub {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-left: 2px;
+}
+
+.brand-text { display: flex; }
+
+/* ── Status badges ──────────────────────────────────────────────────────────── */
+.status-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  margin: 4px 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.status-ok   { background: rgba(46,204,113,0.15); color: var(--success); border: 1px solid rgba(46,204,113,0.3); }
+.status-warn { background: rgba(243,156,18,0.15);  color: var(--warning); border: 1px solid rgba(243,156,18,0.3); }
+
+/* ── Sidebar footer ─────────────────────────────────────────────────────────── */
+.sidebar-footer {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ── Hero section ───────────────────────────────────────────────────────────── */
+.hero-section {
+  text-align: center;
+  padding: 2.5rem 1rem 1.5rem;
+}
+
+.hero-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -1px;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.accent { color: var(--primary); }
+
+.hero-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ── Feature cards ──────────────────────────────────────────────────────────── */
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  text-align: center;
+  transition: transform 0.2s, border-color 0.2s;
+  height: 100%;
+}
+
+.feature-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary);
+}
+
+.feature-icon  { font-size: 2rem; margin-bottom: 0.5rem; }
+.feature-title { font-family: 'Sora', sans-serif; font-weight: 600; font-size: 0.95rem; color: var(--text-primary); margin-bottom: 0.3rem; }
+.feature-desc  { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; }
+
+/* ── Step cards ─────────────────────────────────────────────────────────────── */
+.step-card {
+  background: var(--bg-card2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+}
+
+.step-num   { font-size: 1.5rem; margin-bottom: 0.3rem; }
+.step-title { font-family: 'Sora', sans-serif; font-weight: 600; font-size: 0.85rem; color: var(--primary-light); }
+.step-desc  { font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.3rem; line-height: 1.4; }
+
+/* ── Score hero ─────────────────────────────────────────────────────────────── */
+.score-hero {
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  text-align: center;
+  border: 2px solid;
+  background: var(--bg-card);
+}
+
+.score-number {
+  font-family: 'Sora', sans-serif;
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-label    { font-size: 1rem; color: var(--text-secondary); }
+.score-grade    { font-family: 'Sora', sans-serif; font-size: 2rem; font-weight: 700; margin-top: 0.3rem; }
+.score-sublabel { font-size: 0.85rem; margin-top: 0.2rem; }
+
+.score-excellent { border-color: var(--success); color: var(--success); }
+.score-good      { border-color: var(--accent);  color: var(--accent);  }
+.score-fair      { border-color: var(--warning);  color: var(--warning); }
+.score-poor      { border-color: var(--danger);   color: var(--danger);  }
+
+/* ── Skill chips ────────────────────────────────────────────────────────────── */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0.5rem 0;
+}
+
+.skill-chip {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin: 2px;
+}
+
+.skill-found   { background: rgba(108,99,255,0.2); color: var(--primary-light); border: 1px solid rgba(108,99,255,0.4); }
+.skill-missing { background: rgba(231,76,60,0.15);  color: #FF8080;              border: 1px solid rgba(231,76,60,0.3); }
+
+/* ── Difficulty badges ──────────────────────────────────────────────────────── */
+.difficulty-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.diff-easy   { background: rgba(46,204,113,0.2);  color: var(--success); }
+.diff-medium { background: rgba(243,156,18,0.2);  color: var(--warning); }
+.diff-hard   { background: rgba(231,76,60,0.2);   color: var(--danger);  }
+
+/* ── Chat interface ─────────────────────────────────────────────────────────── */
+.chat-message {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.user-message      { flex-direction: row-reverse; }
+.assistant-message { flex-direction: row; }
+
+.chat-avatar {
+  font-size: 1.5rem;
+  min-width: 36px;
+  text-align: center;
+}
+
+.chat-bubble {
+  max-width: 75%;
+  padding: 0.8rem 1.1rem;
+  border-radius: var(--radius);
+  line-height: 1.6;
+  font-size: 0.92rem;
+  white-space: pre-wrap;
+}
+
+.user-bubble      { background: var(--primary); color: white; border-bottom-right-radius: 4px; }
+.assistant-bubble { background: var(--bg-card2); border: 1px solid var(--border); border-bottom-left-radius: 4px; }
+
+.rag-status {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  padding: 4px 0;
+}
+
+/* ── Career / level badge ───────────────────────────────────────────────────── */
+.level-badge {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  border-radius: var(--radius);
+  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.level-label { font-size: 0.85rem; color: rgba(255,255,255,0.75); }
+.level-value { font-family: 'Sora', sans-serif; font-size: 1.8rem; font-weight: 700; color: white; }
+
+/* ── Roadmap cards ──────────────────────────────────────────────────────────── */
+.roadmap-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+  height: 100%;
+}
+
+.roadmap-month { font-family: 'Sora', sans-serif; font-weight: 600; color: var(--accent); font-size: 0.85rem; margin-bottom: 0.4rem; }
+.roadmap-focus { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; }
+
+/* ── Streamlit overrides ────────────────────────────────────────────────────── */
+.stButton > button {
+  border-radius: var(--radius-sm) !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-weight: 500 !important;
+  transition: all 0.2s !important;
+}
+
+.stButton > button[kind="primary"] {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark)) !important;
+  border: none !important;
+  color: white !important;
+}
+
+.stButton > button[kind="primary"]:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 6px 20px rgba(108,99,255,0.4) !important;
+}
+
+[data-testid="stExpander"] {
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-sm) !important;
+  background: var(--bg-card) !important;
+}
+
+.stTabs [data-baseweb="tab-list"] {
+  gap: 4px;
+}
+
+.stTabs [data-baseweb="tab"] {
+  border-radius: var(--radius-sm) !important;
+  padding: 6px 16px !important;
+  font-family: 'DM Sans', sans-serif !important;
+}
+
+.stProgress > div > div > div {
+  background: linear-gradient(90deg, var(--primary), var(--accent)) !important;
+  border-radius: 4px !important;
+}
